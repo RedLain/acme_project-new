@@ -1,5 +1,11 @@
 from django.shortcuts import render
+from .forms import BirthdayForm
 
 
 def birthday(request):
-    return render(request, 'birthday/birthday.html')
+    form = BirthdayForm()
+    template = 'birthday/birthday.html'
+    context = {
+        'form': form
+    }
+    return render(request, template, context)
